@@ -1,4 +1,4 @@
-public class lection_1 {
+// public class lection_1 {
 
     // public static void main1(String[] args) {
     // char ch = '1';
@@ -40,4 +40,4 @@ public class lection_1 {
     // public static void main(String[] args)
     // public static void main(String[] args)
     // public static void main(String[] args)
-}
+// }
