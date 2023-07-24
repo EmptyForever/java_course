@@ -187,12 +187,121 @@ public class program {
     // System.out.println(res);
     // }
 
+    // public static void main(String[] args) {
+    // int a = 1, b = 2;
+    // int c = a + b;
+    // String res = String.format("%d + %d = %d \n", a, b, c);
+    // System.out.printf("%d + %d = %d \n", a, b, c);
+    // System.out.println(res);
+    // }
+
+    // public static void main(String[] args) {
+    // Scanner iScanner = new Scanner(System.in, "cp866");
+    // boolean flag = iScanner.hasNextFloat();
+    // if (flag) {
+    // float x = iScanner.nextFloat();
+    // System.out.printf("%.2f\n", x);
+    // }
+    // System.out.println(flag);
+    // iScanner.close();
+    // }
+
+    // public static void main(String[] args) {
+    // Scanner iScanner = new Scanner(System.in, "cp866");
+    // boolean flag = iScanner.hasNextFloat();
+    // if (flag) {
+    // int i = 123;
+    // System.out.println(i);
+
+    // }
+    // System.out.println(i);
+    // System.out.println(flag);
+    // iScanner.close();
+    // }
+
+    // public static void sayHi() {
+    // System.out.println("hi!");
+    // }
+
+    // static int sum(int a, int b) {
+    // return a + b;
+    // }
+
+    // static double factor(int n) {
+    // if (n == 1) {
+    // return 1;
+    // }
+    // return n * factor(n - 1);
+    // }
+
+    // public static void main(String[] args) {
+    // sayHi();
+    // System.out.println(sum(1, 3));
+    // System.out.println(factor(5));
+    // }
+
+    // public static void main(String[] args) {
+    // int a = 3;
+    // int b = 2;
+    // int min = a < b ? a : b;
+    // System.out.println(min);
+    // }
+
+    // public static void main(String[] args) {
+    // Scanner iScanner = new Scanner(System.in);
+    // // int value = iScanner.nextInt();
+    // String value = iScanner.nextLine();
+    // String mounth = value;
+    // String text = "";
+    // switch (mounth) {
+    // case "1":
+    // text = "first";
+    // break;
+    // case "2":
+    // text = "second";
+    // break;
+    // default:
+    // text = "mistake";
+    // break;
+
+    // }
+
+    // System.out.println(text);
+    // iScanner.close();
+    // }
+
+    // public static void main(String[] args) {
+
+    // int value = 1;
+    // int count = 0;
+
+    // do {
+    // value /= 10;
+    // count++;
+    // } while (value != 0);
+    // System.out.println(count);
+    // }
+
+    // Циклы
+    // continue, break Операторы для управления циклами — continue и break.
+    // Выполнение следующей итерации цикла — continue.
+    // Прерывание текущей итерации цикла — break. * ближайшего к оператору
+    // public static void main(String[] args) {
+    //     int s = 0;
+    //     for (int i = 1; i <= 10; i++) {
+    //         s += 1;
+    //     }
+    //     System.out.println(s);
+    // }
+
+    
     public static void main(String[] args) {
-        int a = 1, b = 2;
-        int c = a + b;
-        String res = String.format("%d + %d = %d \n", a, b, c);
-        System.out.printf("%d + %d = %d \n", a, b, c);
-        System.out.println(res);
+        for (int i =0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 
 }
