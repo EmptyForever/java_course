@@ -2,7 +2,7 @@ package DZseminars.dz1;
 
 import java.util.Scanner;
 
-public class program1task31 {
+public class program1task3 {
     public static void main(String[] args) {
         int a = getInt();
         char op = getChar();
