@@ -14,10 +14,14 @@ public class lec3 {
         // ex08_objList();
         // ex09_objList();
         // ex10_objList();
-        ex01_Collection();
-        ex02_Collection();
-        ex03_Collection();
-        ex04_Collection();
+        // ex01_Collection();
+        // ex02_Collection();
+        // ex03_Collection();
+        // ex04_Collection();
+        ex05_Collection();
+        ex06_Collection();
+        ex07_Collection();
+        ex08_Collection();
 
     }
 
@@ -82,7 +86,8 @@ public class lec3 {
         }
     }
 
-    {}
+    {
+    }
     // 1. Коллекции. Функционал
     {
     }
@@ -205,8 +210,80 @@ public class lec3 {
         // List.of(item1, item2,...) – возвращает неизменяемый список;
     }
 
+    // clear(), isEmpty(), toString()
+    public static void ex05_Collection() {
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 50, 100, 200, 400, 900));
+        System.out.println(list);
+        String str1 = list.toString();
+        System.out.println(list.toString());
+        list.clear();
+        System.out.println(list);
+        System.out.println(list.isEmpty());
+
+    }
+
+    // Arrays.asList(array), contains(list), removeAll(list), retainAll(list)
+    // Arrays.asList(array), list.containsAll(list2), list2.removeAll(list),
+    // list2.retainAll(list);
+    public static void ex06_Collection() {
+        System.out.println();
+        System.out.println();
+        Integer[] arr = new Integer[] { 1, 3, 8, 2, 4, 3, 3 };
+        Integer[] arr2 = new Integer[] { 1, 3, 8, 2, 4, 7 };
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(arr));
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(arr2));
+        System.out.println(list);
+        System.out.println(list2.containsAll(list));
+        System.out.println(list.containsAll(list2));
+        // list2.removeAll(list);
+        System.out.println(list2);
+        System.out.println(list);
+        list2.retainAll(list);
+        System.out.println(list2);
+    }
+
+    // toArray(), toArray(type array)
+    public static void ex07_Collection() {
+        System.out.println();
+        System.out.println();
+        Integer[] arr2 = new Integer[] { 1, 3, 8, 2, 4, 7 };
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(arr2));
+        System.out.println(list);
+        // System.out.println(Arrays.toString(list.toArray())); // новый объект массив
+        System.out.println(list);
+        Integer[] arrStr = list.toArray(new Integer[0]);
+        System.out.println(arrStr);
+    }
+
+    // List.copyOf()
+    // List.of(item1, item2,...) – возвращает неизменяемый список;
+    public static void ex08_Collection() {
+        System.out.println();
+        System.out.println();
+        Integer[] arr2 = new Integer[] { 1, 3, 8, 2, 4, 7 };
+        ArrayList<Integer> listik = new ArrayList<>(Arrays.asList(arr2));
+        System.out.println(listik);
+        ArrayList<Integer> listik2 = new ArrayList<>(List.copyOf(listik));
+        listik2.add(234);
+        System.out.println(listik2);
+
+        ArrayList<Integer> list = new ArrayList<>(List.of(1, 2, 3, 5));
+        System.out.println(list);
+        list.add(23);
+        list.remove(0);
+        System.out.println(list);
+        System.out.println();
+
+        List<Integer> list2 = List.of(1, 2, 3, 5);
+        System.out.println(list2);
+        list2.add(2); // not good
+        // Exception in thread "main" java.lang.UnsupportedOperationException
+        // список неизменяемый! нельзя доавить или удалить
+
+    }
+
     public static void ex08_objList() {
-        Character value = null;
+        // Character value = null;
         List<Character> list1 = List.of('S', 'e', 'r', 'g', 'e', 'y');
         System.out.println(list1); //
         // list1.remove(1); // java.lang.UnsupportedOperationException
@@ -228,6 +305,7 @@ public class lec3 {
         // hasPrevious(), E previous(), nextIndex(), previousIndex(), set(E e), add(E e)
     }
 
+    // hasNext(), next()
     public static void ex09_objList() {
         List<Integer> list = List.of(1, 12, 123, 1234, 12345);
         for (int item : list) {
@@ -240,6 +318,7 @@ public class lec3 {
         }
     }
 
+    // hasNext(), remove()
     public static void ex10_objList() {
         List<Integer> list = List.of(1, 12, 123, 1234, 12345);
         for (int item : list) {
@@ -252,8 +331,11 @@ public class lec3 {
                 System.out.printf("d% ", item);
             }
             col1.remove();
-
         }
+    }
+
+    public static void met123() {
+
     }
 
 }

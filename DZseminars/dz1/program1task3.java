@@ -9,6 +9,7 @@ public class program1task3 {
         int b = getInt();
 
         System.out.println(calculate(op, a, b));
+
     }
 
     public static int calculate(char op, int a, int b) {
