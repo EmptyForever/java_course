@@ -12,37 +12,35 @@ public class Main {
         HashSet<NoteBook> noteBooks = new HashSet<>();
         createNoteBook(noteBooks);
         System.out.print("Ваш критерий: ");
-
-        Integer indicator = iScanner.nextInt(); // тут будет сканер и запросит число (getInt получается)
+        Integer indicator = iScanner.nextInt();
         HashSet<Object> temp = new HashSet<>();
         temp = firstFilterItem(noteBooks, indicator);
         System.out.println(temp);
         Object[] arr = new Object[2];
         if (indicator == 1 || indicator == 2) {
-            System.out.print("Ваша подборка: ");
-
+            System.out.print("Ваша подборка от Min До Max: ");
             iScanner.nextLine();
-
             String strTemp = iScanner.nextLine();
             System.out.println(strTemp);
             String[] arr2 = strTemp.split(" ");
             arr = new Integer[2];
             arr[0] = Integer.parseInt(arr2[0]);
             arr[1] = Integer.parseInt(arr2[1]);
-
             Arrays.sort(arr);
-            System.out.println(Arrays.toString(arr));
         } else {
+            System.out.print("Ваша подборка: ");
             iScanner.nextLine();
-
             String strTemp = iScanner.nextLine();
             arr = strTemp.split(" ");
-            System.out.println(Arrays.toString(arr));
         }
 
         HashSet<NoteBook> noteBooksEnd = new HashSet<>();
         noteBooksEnd = finishFilter(noteBooks, indicator, arr);
-        System.out.println(noteBooksEnd);
+        if (noteBooksEnd.isEmpty()) {
+            System.out.println("Таких ноутбуков нет!");
+        } else {
+            System.out.println(noteBooksEnd);
+        }
         iScanner.close();
     }
 
@@ -175,31 +173,31 @@ class NoteBook {
 
 }
 
-class lol{
-// public static boolean containValue(Integer indicator, HashSet<Object> temp,
-// Scanner iScanner) {
-// if (indicator == 1 || indicator == 2) {
-// System.out.print("Задайте минимальные значения для критерия через пробел: ");
-// Integer strTemp = iScanner.nextInt();
-// System.out.println(temp.contains(strTemp));
-// if (temp.contains(strTemp)) {
-// return true;
-// }
-// // вызов функции , которая отфультрует ноутбуки и выведет
+class lol {
+    // public static boolean containValue(Integer indicator, HashSet<Object> temp,
+    // Scanner iScanner) {
+    // if (indicator == 1 || indicator == 2) {
+    // System.out.print("Задайте минимальные значения для критерия через пробел: ");
+    // Integer strTemp = iScanner.nextInt();
+    // System.out.println(temp.contains(strTemp));
+    // if (temp.contains(strTemp)) {
+    // return true;
+    // }
+    // // вызов функции , которая отфультрует ноутбуки и выведет
 
-// } else if (indicator == 3 || indicator == 4) {
-// if (indicator == 3) {
-// System.out.print("Введите операционную систему: ");
-// } else {
-// System.out.print("Какого цвета нужен ноутбук?: ");
-// }
-// String strTemp = iScanner.next();
-// System.out.println(temp.contains(strTemp));
-// if (temp.contains(strTemp)) {
-// return true;
-// }
-// // вызов функции , которая отфультрует ноутбуки и выведет
-// }
-// return false;
-// }
+    // } else if (indicator == 3 || indicator == 4) {
+    // if (indicator == 3) {
+    // System.out.print("Введите операционную систему: ");
+    // } else {
+    // System.out.print("Какого цвета нужен ноутбук?: ");
+    // }
+    // String strTemp = iScanner.next();
+    // System.out.println(temp.contains(strTemp));
+    // if (temp.contains(strTemp)) {
+    // return true;
+    // }
+    // // вызов функции , которая отфультрует ноутбуки и выведет
+    // }
+    // return false;
+    // }
 }
