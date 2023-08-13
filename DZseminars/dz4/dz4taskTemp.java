@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class dz4task3 {
+public class dz4taskTemp {
     public static void main(String[] args) {
         Scanner iScanner = new Scanner(System.in, "cp866");
 
