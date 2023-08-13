@@ -3,7 +3,7 @@ package DZseminars.dz6;
 /**
  * Cat
  */
-public class Cat {
+public class NoteBook {
 
     
 }
