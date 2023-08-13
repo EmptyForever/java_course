@@ -2,8 +2,13 @@ package DZseminars.dz6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.SortedSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +23,7 @@ public class Main {
         System.out.println(temp);
         Object[] arr = new Object[2];
         if (indicator == 1 || indicator == 2) {
-            System.out.print("Ваша подборка от Min До Max: ");
+            System.out.print("Ваша подборка от Min До Max(через пробел): ");
             iScanner.nextLine();
             String strTemp = iScanner.nextLine();
             System.out.println(strTemp);
@@ -36,10 +41,46 @@ public class Main {
 
         HashSet<NoteBook> noteBooksEnd = new HashSet<>();
         noteBooksEnd = finishFilter(noteBooks, indicator, arr);
+        // SortedSet<NoteBook> sortSet = new NoteBook(4, 64, "winda", "красный");
+
         if (noteBooksEnd.isEmpty()) {
             System.out.println("Таких ноутбуков нет!");
         } else {
-            System.out.println(noteBooksEnd);
+            if (indicator == 1) {
+                // System.out.println(noteBooksEnd);
+                ArrayList<NoteBook> sortList = new ArrayList<>(noteBooksEnd);
+                // System.out.println(sortList);
+                Collections.sort(sortList, new Comparator<NoteBook>() {
+                    @Override
+                    public int compare(NoteBook p1, NoteBook p2) {
+                        return p1.getOzy() - p2.getOzy();
+                    }
+                });
+                System.out.println(sortList);
+            } else if (indicator == 2) {
+                // System.out.println(noteBooksEnd);
+                ArrayList<NoteBook> sortList = new ArrayList<>(noteBooksEnd);
+                // System.out.println(sortList);
+                Collections.sort(sortList, new Comparator<NoteBook>() {
+                    @Override
+                    public int compare(NoteBook p1, NoteBook p2) {
+                        return p1.getMemory() - p2.getMemory();
+                    }
+                });
+                System.out.println(sortList);
+            } else {
+                // System.out.println(noteBooksEnd);
+                ArrayList<NoteBook> sortList = new ArrayList<>(noteBooksEnd);
+                // System.out.println(sortList);
+                Collections.sort(sortList, new Comparator<NoteBook>() {
+                    @Override
+                    public int compare(NoteBook p1, NoteBook p2) {
+                        return p1.getMemory() - p2.getMemory();
+                    }
+                });
+                System.out.println(sortList);
+            }
+
         }
         iScanner.close();
     }
@@ -170,6 +211,18 @@ class NoteBook {
         return "озу->" + this.ozy + " память->" + this.memory + " операционка->" + this.sistem + " цвет->" + this.color
                 + "\n";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        NoteBook t = (NoteBook) o;
+        return ozy == t.ozy;
+    }
+
+    // @Override
+    // public boolean compare(Object o) {
+    // NoteBook t = (NoteBook) o;
+    // return ozy > t.ozy;
+    // }
 
 }
 
